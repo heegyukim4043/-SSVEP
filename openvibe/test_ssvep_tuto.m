@@ -1,10 +1,10 @@
 %% path toolbox
-addpath('eeglab2022.0');
-addpath('fieldtrip-20190618');
+% addpath('eeglab2022.0');
+% addpath('fieldtrip-20190618');
 
 %% init toolbox
 eeglab; 
-ft_defaults;
+% ft_defaults;
 
 clc;clear;close all;
 %% set param
@@ -40,7 +40,9 @@ data_ch_select = eeg.data(ismember(chan_list,ch_selection),:); % chan x time
 %%% Filter
 % data(ch x time), sampling rate, frequency band, filter order, filter type
 % filter type: Butterworth filter - 'but', Brickwall filter - 'brickwall'
-data_filt = ft_preproc_bandpassfilter(data_ch_select,srate,filt_bps,4,'but'); 
+% data_filt = ft_preproc_bandpassfilter(data_ch_select,srate,filt_bps,4,'but'); 
+eeg = pop_eegfiltnew(eeg, 'locutoff',filt_bps(1),'hicutoff',filt_bps(2));
+data_filt = eeg.data;
 
 %%% Epoching
 % data_ep: ch x time x class x trial
@@ -92,4 +94,5 @@ for idx_class = 1:size(data_fft,3)
     ylabel('Amp(uV)');
     title(sprintf('Class: %d,  Chan: %s',idx_class,str_chan));
 end   
+
     
