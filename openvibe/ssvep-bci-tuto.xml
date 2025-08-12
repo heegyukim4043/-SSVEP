@@ -44,7 +44,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Acquisition server port</Name>
 					<DefaultValue>1024</DefaultValue>
-					<Value>1026</Value>
+					<Value>1024</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -76,6 +76,60 @@
 			</Attributes>
 		</Box>
 		<Box>
+			<Identifier>(0x000041d6, 0x0000246a)</Identifier>
+			<Name>EDF File Writer</Name>
+			<AlgorithmClassIdentifier>(0x0d454dce, 0x470a4c02)</AlgorithmClassIdentifier>
+			<Inputs>
+				<Input>
+					<TypeIdentifier>(0x403488e7, 0x565d70b6)</TypeIdentifier>
+					<Name>Experiment information</Name>
+				</Input>
+				<Input>
+					<TypeIdentifier>(0x5ba36127, 0x195feae1)</TypeIdentifier>
+					<Name>Signal</Name>
+				</Input>
+				<Input>
+					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
+					<Name>Stimulations</Name>
+				</Input>
+			</Inputs>
+			<Settings>
+				<Setting>
+					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
+					<Name>Filename</Name>
+					<DefaultValue>record-[$core{date}-$core{time}].edf</DefaultValue>
+					<Value>C:/Users/user/Desktop/data_folder/SSVEP-[$core{date}-$core{time}].edf</Value>
+					<Modifiability>false</Modifiability>
+				</Setting>
+			</Settings>
+			<Attributes>
+				<Attribute>
+					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
+					<Value>192</Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
+					<Value>992</Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
+					<Value>1</Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
+					<Value>(0xd41e3037, 0xcc12644a)</Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0xce18836a, 0x9c0eb403)</Identifier>
+					<Value>1</Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0xcfad85b0, 0x7c6d841c)</Identifier>
+					<Value>3</Value>
+				</Attribute>
+			</Attributes>
+		</Box>
+		<Box>
 			<Identifier>(0x00007299, 0x00000743)</Identifier>
 			<Name>GDF file writer</Name>
 			<AlgorithmClassIdentifier>(0x1e7b2155, 0x107289ce)</AlgorithmClassIdentifier>
@@ -98,7 +152,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue>record-[$core{date}-$core{time}].gdf</DefaultValue>
-					<Value>record-[$core{date}-$core{time}].gdf</Value>
+					<Value>C:/Users/user/Desktop/data_folder/SSVEP-[$core{date}-$core{time}].gdf</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -157,7 +211,7 @@
 					<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
 					<Name>Goal sequence</Name>
 					<DefaultValue>0 2 3 1 2 1 0 3 1 2 3 0 2 0 3 1 0 3 1 2 3 0 1 2 1 3 2 0 3 2 0 1 </DefaultValue>
-					<Value>1 2 3 1 3 2 2 1 3 2 3 1 3 1 2 3 2 1</Value>
+					<Value>1 2 3 1 3 2 2 1 3 2 3 1 3 1 2 3 2 1 1 2 3 1 3 2 2 1 3 2 3 1 3 1 2 3 2 1 </Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -991,6 +1045,17 @@
 	</Boxes>
 	<Links>
 		<Link>
+			<Identifier>(0x00001f9d, 0x000004fb)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x4ace51e8, 0x2aa6d781)</BoxIdentifier>
+				<BoxOutputIndex>0</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x000041d6, 0x0000246a)</BoxIdentifier>
+				<BoxInputIndex>2</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x000035f8, 0x000060ec)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x00004162, 0x0000548c)</BoxIdentifier>
@@ -1032,6 +1097,17 @@
 			<Target>
 				<BoxIdentifier>(0x00007299, 0x00000743)</BoxIdentifier>
 				<BoxInputIndex>2</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
+			<Identifier>(0x00007b19, 0x00004ca3)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x00004162, 0x0000548c)</BoxIdentifier>
+				<BoxOutputIndex>1</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x000041d6, 0x0000246a)</BoxIdentifier>
+				<BoxInputIndex>1</BoxInputIndex>
 			</Target>
 		</Link>
 		<Link>
