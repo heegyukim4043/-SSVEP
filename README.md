@@ -1,1 +1,1 @@
-뇌파 스쿨 SSVEP openvibe 설치 파일
+2025 뇌파 스쿨 SSVEP & ERP openvibe 파일
